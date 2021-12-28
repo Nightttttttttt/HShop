@@ -21,6 +21,7 @@ Future setupLocator() async {
       .getBool(Preferences.is_dark_mode_on)
       .then((isDarkTheme) {
     bool darkModeOn = isDarkTheme ?? true;
+    
     locator.registerLazySingleton(
         () => ThemeProvider(darkModeOn ? darkTheme : lightTheme));
   });
